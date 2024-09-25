@@ -11,6 +11,10 @@ public abstract class Conta {
         return numeroConta;
     }
 
+    public double getSaldo(){
+        return saldo;
+    }
+
     public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
@@ -33,7 +37,7 @@ public abstract class Conta {
         if(valor > 0 && saldo >= valor){
             saldo -= valor;
             destino.depositar(valor);
-            System.out.println("Transferencia de R$" + valor + " para a conta" + destino.getNumeroConta() + " realizada com sucesso.");
+            System.out.println("Transferencia de R$" + valor + " para a conta " + destino.getNumeroConta() + " realizada com sucesso.");
         } else {
             System.out.println("Saldo insuficiente ou valor inválido para transferencia");
         }
